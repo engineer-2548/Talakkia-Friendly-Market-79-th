@@ -554,8 +554,9 @@
     </footer>
 
     <script>
-        // Dark Mode Toggle
+        // Dark Mode Toggle - Both Desktop and Mobile
         const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeToggleMobile = document.getElementById('darkModeToggleMobile');
         const html = document.documentElement;
         
         // Check for saved dark mode preference
@@ -563,20 +564,48 @@
             html.classList.add('dark');
         }
         
-        darkModeToggle.addEventListener('click', () => {
+        function toggleDarkMode() {
             html.classList.toggle('dark');
             localStorage.setItem('darkMode', html.classList.contains('dark'));
-        });
+        }
         
-        // Smooth Scroll
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+        }
+        
+        if (darkModeToggleMobile) {
+            darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+        }
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking a link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+        
+        // Smooth Scroll with offset for fixed navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -653,22 +682,43 @@
         updateCountdown();
         setInterval(updateCountdown, 60000);
         
-        // Mobile Menu Toggle (if needed)
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
+        // Disable parallax on mobile to prevent scroll issues
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+        if (!isMobile) {
+            // Parallax Effect on Hero Section (Desktop only)
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.gradient-bg');
+                if (parallax) {
+                    parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
             });
         }
         
-        // Parallax Effect on Hero Section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.gradient-bg');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // Ensure iframe doesn't block scrolling
+        window.addEventListener('load', () => {
+            const iframe = document.querySelector('iframe');
+            if (iframe) {
+                iframe.setAttribute('scrolling', 'no');
+                iframe.style.pointerEvents = 'none';
+                
+                // Re-enable pointer events on click
+                iframe.addEventListener('click', () => {
+                    iframe.style.pointerEvents = 'auto';
+                });
+                
+                // Disable pointer events when scrolling
+                let scrollTimer = null;
+                window.addEventListener('scroll', () => {
+                    if (iframe) {
+                        iframe.style.pointerEvents = 'none';
+                        clearTimeout(scrollTimer);
+                        scrollTimer = setTimeout(() => {
+                            iframe.style.pointerEvents = 'auto';
+                        }, 500);
+                    }
+                });
             }
         });
     </script>
