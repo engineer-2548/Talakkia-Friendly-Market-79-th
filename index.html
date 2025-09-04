@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talakkia Friendly Market ครั้งที่ 79 | ดอกโบตั๋นบ้านฉัน พระจันทร์เสี้ยวบ้านเธอ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Prompt:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Sarabun', 'Prompt', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .dark .text-gradient {
+            background: linear-gradient(135deg, #fbbf24 0%, #fb923c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(147, 51, 234, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(147, 51, 234, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(147, 51, 234, 0);
+            }
+        }
+        
+        .workshop-card {
+            transition: all 0.3s ease;
+        }
+        
+        .workshop-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            background: #9333ea;
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 14px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: #e5e7eb;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .dark .timeline-item::after {
+            background: #4b5563;
+        }
+        
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .sticky-nav {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .dark .sticky-nav {
+            background: rgba(31, 41, 55, 0.9);
+        }
+        
+        .moon-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .dark .moon-icon {
+            transform: rotate(180deg);
+        }
+        
+        .sun-icon {
+            display: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .dark .sun-icon {
+            display: inline-block;
+            transform: rotate(360deg);
+        }
+        
+        .dark .moon-icon {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="sticky-nav fixed top-0 w-full z-50 py-4 px-6 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-purple-600 dark:text-purple-400">Talakkia Market</h1>
+            <div class="flex items-center gap-4">
+                <a href="#event" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">งาน</a>
+                <a href="#schedule" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">ตารางงาน</a>
+                <a href="#workshops" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">เวิร์กช็อป</a>
+                <a href="#location" class="text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition">สถานที่</a>
+                <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition">
+                    <span class="moon-icon">🌙</span>
+                    <span class="sun-icon">☀️</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-40 right-20 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-40 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+        
+        <div class="relative z-10 text-center text-white px-6 fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 floating">
+                𝑻𝒂𝒍𝒂𝒌𝒌𝒊𝒂 𝑭𝒓𝒊𝒆𝒏𝒅𝒍𝒚 𝑴𝒂𝒓𝒌𝒆𝒕
+            </h1>
+            <p class="text-3xl md:text-4xl mb-2">ครั้งที่ 79</p>
+            <p class="text-2xl md:text-3xl mb-8 font-light">
+                "ดอกโบตั๋นบ้านฉัน พระจันทร์เสี้ยวบ้านเธอ"
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-8">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
+                    <p class="text-xl">📅 13-14 กันยายน 2568</p>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-6 py-3">
+                    <p class="text-xl">⏰ 10:00 - 18:00 น.</p>
+                </div>
+            </div>
+            <div class="mb-8">
+                <p class="text-lg mb-2">📍 พิพิธตลาดน้อย, ท่าน้ำภาณุรังษี</p>
+                <p class="text-md">ตะลักเกี้ยะ x เจริญกรุง 103 x มดตะนอย</p>
+            </div>
+            <div class="flex gap-4 justify-center">
+                <a href="#event" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 transition transform hover:scale-105 pulse-btn">
+                    ดูรายละเอียด
+                </a>
+                <a href="https://maps.app.goo.gl/LJ9W6JhA73ymXS856?g_st=ic" target="_blank" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition transform hover:scale-105">
+                    ดูแผนที่
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Image Section -->
+    <section class="py-16 px-6 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="rounded-xl overflow-hidden shadow-2xl">
+                <img src="https://drive.google.com/uc?export=view&id=14tjnKpNeq_MZp4prvg4WQWxHcVEbm6tX" 
+                     alt="Talakkia Friendly Market 79" 
+                     class="w-full h-auto object-cover"
+                     onerror="this.src='https://via.placeholder.com/1200x600/9333ea/ffffff?text=Talakkia+Friendly+Market+79'">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Event -->
+    <section id="event" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto scroll-reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient">เกี่ยวกับงาน</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg workshop-card">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-400">🌙 วัฒนธรรมที่หลากหลาย</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Series "Talakkia & Neighbours" นำเสนอวัฒนธรรมอันน่าหลงใหลจากชุมชนเจริญกรุง 103 
+                        และกลุ่มมดตะนอย ชุมชนชาวมุสลิม มาร่วมเรียนรู้วัฒนธรรมที่แตกต่างหลากหลาย
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg workshop-card">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-400">🍛 อาหารเอกลักษณ์</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        อิ่มอร่อยกับเมนูพิเศษ: บริยานีไก่ ข้าวยำปักษ์ใต้ ขนมจีน ทอดมันปลากราย สลัดแขก 
+                        และของหวาน ขนมโค โก๋สุ่ย ขนมหัวเราะ ขนมไข่นิ่ม ขนมบะก๊า
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg workshop-card">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-400">🎨 กิจกรรม Sketch in Market</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        ชวนวาดตลาดนัด นำโดย Res. วาดไป ชิมไป คุยไป อิ่มไป กับบรรยากาศของตลาดน่ารัก 
+                        ไม่เสียค่าใช้จ่าย กินได้ทั้งวัน วาดกันยันเย็น!
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg workshop-card">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-600 dark:text-purple-400">🛍️ ร้านค้ามากมาย</h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                        พบกับร้านค้าตะลักเกี้ยะกว่า 50 ร้าน ทั้งอาหารโฮมเมด ขนม เครื่องดื่ม งานศิลปะ 
+                        งานทำมือ เสื้อผ้าแฮนด์เมด เครื่องประดับ ของแต่งบ้าน
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 px-6 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto scroll-reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient">ตารางกิจกรรม</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Saturday -->
+                <div class="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-700 dark:text-purple-300">📅 เสาร์ 13 กันยายน 2568</h3>
+                    <div class="space-y-4">
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-purple-600 dark:text-purple-400">10:00-12:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">การแสดงดนตรี โรงเตี๊ยมหรรษา</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-purple-600 dark:text-purple-400">12:00-13:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">Workshop ขนมหัวเราะ (ฟรี)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-purple-600 dark:text-purple-400">13:00-14:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">Workshop ขนมสัมปันนี (ฟรี)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-purple-600 dark:text-purple-400">14:00-16:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">การแสดงดนตรีโฟล์คซองและอูคูเลเล่</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-purple-600 dark:text-purple-400">16:00-17:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">เสวนา "วัฒนธรรมแห่งสายน้ำ"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sunday -->
+                <div class="bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900 dark:to-orange-900 rounded-xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-orange-700 dark:text-orange-300">📅 อาทิตย์ 14 กันยายน 2568</h3>
+                    <div class="space-y-4">
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-orange-600 dark:text-orange-400">11:00-12:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">Workshop โรตีโรย (ฟรี)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-orange-600 dark:text-orange-400">12:00-13:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">Workshop ขนมโก๋ (79 บาท)</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-orange-600 dark:text-orange-400">14:00-16:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">การแสดงดนตรี โรงเตี๊ยมหรรษา</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
+                                <p class="font-semibold text-orange-600 dark:text-orange-400">16:00-18:00 น.</p>
+                                <p class="text-gray-700 dark:text-gray-300">การแสดงอะคูสติก "วงสุรศักดิ์"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-sm text-gray-600 dark:text-gray-400 bg-yellow-100 dark:bg-yellow-900 rounded-lg p-4 inline-block">
+                    *สำรองที่นั่ง Workshop ได้ที่ <strong>Talatnoi Community - วิสาหกิจชุมชนการท่องเที่ยวย่านตลาดน้อย</strong><br>
+                    รับจำนวนจำกัด 15 ท่าน/รอบ
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section id="workshops" class="py-20 px-6 bg-gray-100 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto scroll-reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient">เวิร์กช็อปตลอดงาน</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- กลุ่มมดน้อย -->
+                <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-8 text-white shadow-xl workshop-card">
+                    <h3 class="text-2xl font-bold mb-4">🐜 กลุ่มมดน้อย</h3>
+                    <p class="mb-4 opacity-90">Walk-in ได้เลย!</p>
+                    <ul class="space-y-2">
+                        <li>• ดินปั้น</li>
+                        <li>• เพ้นท์เฮนน่า</li>
+                        <li>• เลโก้โคดดิ้ง</li>
+                        <li>• แต่งหน้าคุกกี้</li>
+                        <li>• วาดรูปลายเส้น</li>
+                        <li>• เพ้นท์แมกเน็ต</li>
+                        <li>• ร้อยลูกปัด</li>
+                    </ul>
+                </div>
+                
+                <!-- เจริญกรุง 103 -->
+                <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-xl p-8 text-white shadow-xl workshop-card">
+                    <h3 class="text-2xl font-bold mb-4">🏘️ เจริญกรุง 103</h3>
+                    <p class="mb-4 opacity-90">Walk-in ได้เลย!</p>
+                    <ul class="space-y-2">
+                        <li>• คลุมผ้าฮิญาบ</li>
+                        <li class="text-sm opacity-75">(จำกัด 15 ผืน/วัน)</li>
+                    </ul>
+                </div>
+                
+                <!-- ตะลักเกี้ยะ -->
+                <div class="bg-gradient-to-br from-pink-500 to-red-600 rounded-xl p-8 text-white shadow-xl workshop-card">
+                    <h3 class="text-2xl font-bold mb-4">🎪 ตะลักเกี้ยะ</h3>
+                    <p class="mb-4 opacity-90">Walk-in ได้เลย!</p>
+                    <ul class="space-y-2">
+                        <li>• ทำพวงกุญแจปลาคู่<br><span class="text-sm opacity-75">by Taladnoi on Ground</span></li>
+                        <li>• ร้อยสร้อยหิน<br><span class="text-sm opacity-75">by Lakamyst</span></li>
+                        <li>• เขียนโปสการ์ด<br><span class="text-sm opacity-75">by UNHCR</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-20 px-6 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto scroll-reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient">การเดินทาง</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 dark:bg-gray-900 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-600 dark:text-purple-400">📍 สถานที่จัดงาน</h3>
+                    <p class="text-lg mb-4 text-gray-700 dark:text-gray-300">
+                        <strong>ท่าน้ำภาณุรังษี พิพิธตลาดน้อย</strong>
+                    </p>
+                    <a href="https://maps.app.goo.gl/LJ9W6JhA73ymXS856?g_st=ic" 
+                       target="_blank" 
+                       class="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition">
+                        🗺️ ดูแผนที่ Google Maps
+                    </a>
+                    
+                    <h3 class="text-xl font-bold mt-8 mb-4 text-purple-600 dark:text-purple-400">🚗 ที่จอดรถ</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        วัดปทุมคงคาราชวรวิหาร (20 บาท/ชม.)
+                    </p>
+                    <a href="https://goo.gl/maps/BmoNHDiQdYoVKvYr7" 
+                       target="_blank" 
+                       class="inline-block mt-2 text-purple-600 dark:text-purple-400 hover:underline">
+                        ดูตำแหน่งที่จอดรถ →
+                    </a>
+                </div>
+                
+                <div class="bg-gray-100 dark:bg-gray-900 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-600 dark:text-purple-400">🚌 ขนส่งสาธารณะ</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4">
+                            <p class="font-semibold text-purple-600 dark:text-purple-400">🚇 MRT หัวลำโพง</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">ทางออก 1 เดินมา 900 เมตร หรือต่อมอเตอร์ไซค์</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4">
+                            <p class="font-semibold text-purple-600 dark:text-purple-400">⛴️ เรือด่วนกรมเจ้าท่า</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">เดินมาตามซอยวานิช 2 ระยะทาง 650 เมตร</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4">
+                            <p class="font-semibold text-purple-600 dark:text-purple-400">🚌 รถเมล์</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">สาย 1, 75, 35 ผ่านตลาดน้อย</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg py-12 px-6 text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-4">𝑻𝒂𝒍𝒂𝒌𝒌𝒊𝒂 𝑭𝒓𝒊𝒆𝒏𝒅𝒍𝒚 𝑴𝒂𝒓𝒌𝒆𝒕</h3>
+            <p class="text-xl mb-8">ครั้งที่ 79</p>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://maps.app.goo.gl/LJ9W6JhA73ymXS856?g_st=ic" 
+                   target="_blank" 
+                   class="bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition">
+                    📍
+                </a>
+                <a href="#event" class="bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition">
+                    📧
+                </a>
+                <a href="#" class="bg-white/20 backdrop-blur-sm rounded-full p-3 hover:bg-white/30 transition">
+                    📱
+                </a>
+            </div>
+            <p class="text-sm opacity-75">© 2025 Talakkia Friendly Market | All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            html.classList.add('dark');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        });
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Navbar Background on Scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Add blob animation styles
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes blob {
+                0% { transform: translate(0px, 0px) scale(1); }
+                33% { transform: translate(30px, -50px) scale(1.1); }
+                66% { transform: translate(-20px, 20px) scale(0.9); }
+                100% { transform: translate(0px, 0px) scale(1); }
+            }
+            .animate-blob {
+                animation: blob 7s infinite;
+            }
+            .animation-delay-2000 {
+                animation-delay: 2s;
+            }
+            .animation-delay-4000 {
+                animation-delay: 4s;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Countdown Timer (Optional)
+        function updateCountdown() {
+            const eventDate = new Date('2025-09-13T10:00:00');
+            const now = new Date();
+            const diff = eventDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                const countdownEl = document.getElementById('countdown');
+                if (countdownEl) {
+                    countdownEl.textContent = `${days} วัน ${hours} ชั่วโมง ${minutes} นาที`;
+                }
+            }
+        }
+        
+        // Update countdown every minute
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+        
+        // Mobile Menu Toggle (if needed)
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Parallax Effect on Hero Section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.gradient-bg');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
