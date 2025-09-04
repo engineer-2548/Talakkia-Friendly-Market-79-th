@@ -238,145 +238,75 @@
     <!-- Event Image Section -->
     <section class="py-16 px-6 bg-white dark:bg-gray-800">
         <div class="max-w-6xl mx-auto">
-            <div class="rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 to-pink-500 p-1">
-                <div class="bg-white dark:bg-gray-900 rounded-lg p-8">
-                    <!-- Custom SVG Illustration -->
-                    <svg viewBox="0 0 1200 600" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Background Gradient -->
-                        <defs>
-                            <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#9333ea;stop-opacity:0.1" />
-                                <stop offset="50%" style="stop-color:#ec4899;stop-opacity:0.1" />
-                                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.1" />
-                            </linearGradient>
-                            <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="flowerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#f43f5e;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        
-                        <!-- Background -->
-                        <rect width="1200" height="600" fill="url(#bgGrad)" />
-                        
-                        <!-- Crescent Moon -->
-                        <g transform="translate(150, 100)">
-                            <circle cx="0" cy="0" r="60" fill="url(#moonGrad)" opacity="0.9"/>
-                            <circle cx="20" cy="-10" r="55" fill="white" class="dark:fill-gray-900"/>
-                            <text x="-30" y="100" font-family="Prompt, sans-serif" font-size="18" fill="#7c3aed" font-weight="600">พระจันทร์เสี้ยว</text>
-                        </g>
-                        
-                        <!-- Flowers -->
-                        <g transform="translate(950, 120)">
-                            <circle cx="0" cy="0" r="35" fill="url(#flowerGrad)" opacity="0.2"/>
-                            <circle cx="0" cy="0" r="8" fill="#ec4899"/>
-                            <ellipse cx="-15" cy="-10" rx="12" ry="20" fill="#f9a8d4" transform="rotate(-20 -15 -10)"/>
-                            <ellipse cx="15" cy="-10" rx="12" ry="20" fill="#f9a8d4" transform="rotate(20 15 -10)"/>
-                            <ellipse cx="0" cy="-20" rx="12" ry="20" fill="#f9a8d4"/>
-                            <ellipse cx="-18" cy="8" rx="12" ry="20" fill="#f9a8d4" transform="rotate(-60 -18 8)"/>
-                            <ellipse cx="18" cy="8" rx="12" ry="20" fill="#f9a8d4" transform="rotate(60 18 8)"/>
-                            <text x="-40" y="80" font-family="Prompt, sans-serif" font-size="18" fill="#7c3aed" font-weight="600">ดอกโบตั๋น</text>
-                        </g>
-                        
-                        <!-- Market Stalls -->
-                        <g transform="translate(300, 350)">
-                            <!-- Stall 1 -->
-                            <rect x="0" y="0" width="150" height="120" fill="#9333ea" opacity="0.8" rx="10"/>
-                            <rect x="10" y="10" width="130" height="80" fill="white" rx="5"/>
-                            <text x="75" y="55" font-family="Prompt, sans-serif" font-size="14" fill="#7c3aed" text-anchor="middle">อาหารไทย</text>
-                            <circle cx="30" cy="110" r="8" fill="#4b5563"/>
-                            <circle cx="120" cy="110" r="8" fill="#4b5563"/>
-                        </g>
-                        
-                        <g transform="translate(500, 350)">
-                            <!-- Stall 2 -->
-                            <rect x="0" y="0" width="150" height="120" fill="#ec4899" opacity="0.8" rx="10"/>
-                            <rect x="10" y="10" width="130" height="80" fill="white" rx="5"/>
-                            <text x="75" y="55" font-family="Prompt, sans-serif" font-size="14" fill="#ec4899" text-anchor="middle">งานศิลปะ</text>
-                            <circle cx="30" cy="110" r="8" fill="#4b5563"/>
-                            <circle cx="120" cy="110" r="8" fill="#4b5563"/>
-                        </g>
-                        
-                        <g transform="translate(700, 350)">
-                            <!-- Stall 3 -->
-                            <rect x="0" y="0" width="150" height="120" fill="#f59e0b" opacity="0.8" rx="10"/>
-                            <rect x="10" y="10" width="130" height="80" fill="white" rx="5"/>
-                            <text x="75" y="55" font-family="Prompt, sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle">เวิร์กช็อป</text>
-                            <circle cx="30" cy="110" r="8" fill="#4b5563"/>
-                            <circle cx="120" cy="110" r="8" fill="#4b5563"/>
-                        </g>
-                        
-                        <!-- Title Text -->
-                        <text x="600" y="250" font-family="Prompt, sans-serif" font-size="42" fill="#7c3aed" text-anchor="middle" font-weight="bold">
-                            Talakkia Friendly Market 79
-                        </text>
-                        <text x="600" y="290" font-family="Prompt, sans-serif" font-size="24" fill="#ec4899" text-anchor="middle">
-                            ตะลักเกี้ยะ × เจริญกรุง 103 × มดตะนอย
-                        </text>
-                        
-                        <!-- Decorative Elements -->
-                        <circle cx="100" cy="400" r="30" fill="#fbbf24" opacity="0.3"/>
-                        <circle cx="1100" cy="450" r="40" fill="#ec4899" opacity="0.3"/>
-                        <circle cx="200" cy="500" r="20" fill="#9333ea" opacity="0.3"/>
-                        <circle cx="1000" cy="380" r="25" fill="#10b981" opacity="0.3"/>
-                        
-                        <!-- Date Badge -->
-                        <g transform="translate(600, 500)">
-                            <rect x="-120" y="-30" width="240" height="60" fill="#7c3aed" rx="30"/>
-                            <text x="0" y="5" font-family="Prompt, sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="600">
-                                13-14 กันยายน 2568
-                            </text>
-                        </g>
-                    </svg>
+            <h2 class="text-3xl font-bold text-center mb-8 text-purple-600 dark:text-purple-400">ภาพประกอบข่าว</h2>
+            
+            <!-- Main Event Image from Google Drive -->
+            <div class="rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 to-pink-500 p-1 mb-8">
+                <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden">
+                    <!-- Method 1: Direct Image -->
+                    <img src="https://drive.google.com/uc?export=view&id=14tjnKpNeq_MZp4prvg4WQWxHcVEbm6tX" 
+                         alt="Talakkia Friendly Market 79 - ดอกโบตั๋นบ้านฉัน พระจันทร์เสี้ยวบ้านเธอ" 
+                         class="w-full h-auto object-cover"
+                         loading="lazy"
+                         onerror="this.style.display='none'; document.getElementById('driveFrame').style.display='block';">
                     
-                    <!-- Alternative Image Loading -->
-                    <div class="mt-8 text-center">
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">ภาพประกอบงาน</p>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg p-4 text-white">
-                                <div class="text-3xl mb-2">🍜</div>
-                                <p class="text-sm">อาหารพื้นบ้าน</p>
-                            </div>
-                            <div class="bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg p-4 text-white">
-                                <div class="text-3xl mb-2">🎨</div>
-                                <p class="text-sm">งานศิลปะ</p>
-                            </div>
-                            <div class="bg-gradient-to-br from-green-400 to-teal-400 rounded-lg p-4 text-white">
-                                <div class="text-3xl mb-2">👗</div>
-                                <p class="text-sm">เสื้อผ้าแฮนด์เมด</p>
-                            </div>
-                            <div class="bg-gradient-to-br from-orange-400 to-red-400 rounded-lg p-4 text-white">
-                                <div class="text-3xl mb-2">🎪</div>
-                                <p class="text-sm">เวิร์กช็อป</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Image Gallery Placeholder -->
-                        <div class="mt-8 bg-gray-100 dark:bg-gray-800 rounded-lg p-8">
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="aspect-video bg-gradient-to-br from-purple-200 to-pink-200 dark:from-purple-900 dark:to-pink-900 rounded-lg flex items-center justify-center">
-                                    <span class="text-4xl">🌙</span>
-                                </div>
-                                <div class="aspect-video bg-gradient-to-br from-blue-200 to-cyan-200 dark:from-blue-900 dark:to-cyan-900 rounded-lg flex items-center justify-center">
-                                    <span class="text-4xl">🌺</span>
-                                </div>
-                                <div class="aspect-video bg-gradient-to-br from-green-200 to-teal-200 dark:from-green-900 dark:to-teal-900 rounded-lg flex items-center justify-center">
-                                    <span class="text-4xl">🎭</span>
-                                </div>
-                            </div>
-                            <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                                สำหรับภาพประกอบข่าวเพิ่มเติม สามารถดูได้ที่: 
-                                <a href="https://drive.google.com/file/d/14tjnKpNeq_MZp4prvg4WQWxHcVEbm6tX/view" 
-                                   target="_blank" 
-                                   class="text-purple-600 dark:text-purple-400 hover:underline">
-                                    Google Drive
-                                </a>
-                            </p>
-                        </div>
-                    </div>
+                    <!-- Method 2: iFrame as Fallback -->
+                    <iframe id="driveFrame" 
+                            src="https://drive.google.com/file/d/14tjnKpNeq_MZp4prvg4WQWxHcVEbm6tX/preview" 
+                            width="100%" 
+                            height="600" 
+                            frameborder="0"
+                            class="rounded-lg"
+                            style="display:none;"
+                            allow="autoplay">
+                    </iframe>
+                </div>
+            </div>
+            
+            <!-- Additional Event Info Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg p-6 text-white transform hover:scale-105 transition">
+                    <div class="text-4xl mb-3">🍜</div>
+                    <p class="font-semibold">อาหารพื้นบ้าน</p>
+                    <p class="text-sm opacity-90">บริยานีไก่ ข้าวยำ ขนมจีน</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg p-6 text-white transform hover:scale-105 transition">
+                    <div class="text-4xl mb-3">🎨</div>
+                    <p class="font-semibold">งานศิลปะ</p>
+                    <p class="text-sm opacity-90">ผลงานศิลปินท้องถิ่น</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-400 to-teal-400 rounded-lg p-6 text-white transform hover:scale-105 transition">
+                    <div class="text-4xl mb-3">👗</div>
+                    <p class="font-semibold">แฟชั่น</p>
+                    <p class="text-sm opacity-90">เสื้อผ้าแฮนด์เมด</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-400 to-red-400 rounded-lg p-6 text-white transform hover:scale-105 transition">
+                    <div class="text-4xl mb-3">🎪</div>
+                    <p class="font-semibold">เวิร์กช็อป</p>
+                    <p class="text-sm opacity-90">กิจกรรมสร้างสรรค์</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Links -->
+            <div class="bg-gray-100 dark:bg-gray-900 rounded-xl p-8">
+                <h3 class="text-xl font-bold mb-4 text-center text-purple-600 dark:text-purple-400">ช่องทางดูภาพเพิ่มเติม</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://drive.google.com/file/d/14tjnKpNeq_MZp4prvg4WQWxHcVEbm6tX/view" 
+                       target="_blank" 
+                       class="bg-white dark:bg-gray-800 px-6 py-3 rounded-lg shadow hover:shadow-lg transition flex items-center gap-2">
+                        <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7.71 3.52L1.15 15l6.56 6.48L21 8.61z"/>
+                        </svg>
+                        <span class="text-gray-700 dark:text-gray-300">ดูใน Google Drive</span>
+                    </a>
+                    <a href="https://drive.google.com/uc?export=download&id=14tjnKpNeq_MZp4prvg4WQWxHcVEbm6tX" 
+                       target="_blank"
+                       class="bg-white dark:bg-gray-800 px-6 py-3 rounded-lg shadow hover:shadow-lg transition flex items-center gap-2">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+                        </svg>
+                        <span class="text-gray-700 dark:text-gray-300">ดาวน์โหลดภาพ</span>
+                    </a>
                 </div>
             </div>
         </div>
